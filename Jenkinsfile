@@ -11,22 +11,22 @@ pipeline {
 		}
 		stage('Maven package') {    
  			steps {      
-				bat 'mvn install'    
+				sh 'mvn install'    
  			}    
 		}    
 		stage('Test') {
  			steps {      
-				bat 'mvn test'    
+				sh 'mvn test'    
  			}        
  		}
 		stage('Sonar Analysis') {    
 			steps {      
-				bat 'mvn sonar:sonar'    
+				sh 'mvn sonar:sonar'    
  			}         
 		}
 		stage('Docker Build') {    
  			steps {      
-				bat 'docker build -f Dockerfile -t dsrcdemo .'     
+				sh 'docker build -f Dockerfile -t dsrcdemo .'     
 			}         
 		}  
 	}
