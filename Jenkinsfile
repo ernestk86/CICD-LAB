@@ -11,7 +11,7 @@ pipeline {
 		}
 		stage('Maven package') {    
  			steps {      
-				sh 'mvn install -e'    
+				sh 'mvn install -e -U'    
  			}    
 		}    
 		stage('Test') {
